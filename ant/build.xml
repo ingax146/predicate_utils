@@ -79,6 +79,8 @@
 
 	<target name="init" depends="clean">
 		<mkdir dir="${deploy.home}"/>
+		<!-- These folders are needed to be able to build the composer project. -->
+		<mkdir dir="../bin-dar"/>
 	</target>
 
 	<target name="compile" depends="init">
