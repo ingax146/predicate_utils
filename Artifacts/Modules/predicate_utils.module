@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Artifact:Artifact xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Artifact="http://documentum.emc.com/infrastructure/12012007/artifact" xmlns:moduledef="http://documentum.emc.com/artifact/12012007/moduledef" urn="urn:com.emc.ide.artifact.moduledef/predicate_utils?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/Modules/predicate_utils.module" categoryId="com.emc.ide.artifact.moduledef">
+  <dataModel xsi:type="moduledef:ModuleDef" objectName="com.emc.xcelerators.community.bpm.predicate_utils" contact_info="Ingemar Axelsson" a_module_type="[Standard Module]">
+    <objectType href="urn:com.emc.ide.artifact.dclass/dmc_module?name=dmc_module#//@dataModel"/>
+    <interfaceJars href="urn:com.emc.ide.artifact.jardef.jardef/predicateutils?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/JAR%20Definitions/predicateutils.jardef#//@dataModel"/>
+    <implementationJars href="urn:com.emc.ide.artifact.jardef.jardef/predicateutilsImpl?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/JAR%20Definitions/predicateutilsimpl.jardef#//@dataModel"/>
+    <javadocs href="urn:com.emc.ide.artifact.sysobjectsubtype/javadoc?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/SysObjects/javadoc.sysobject#//@dataModel"/>
+    <runtimeEnvironmentXML objectName="RuntimeEnvironment.xml">
+      <objectType href="urn:com.emc.ide.artifact.dclass/dm_sysobject?name=dm_sysobject#//@dataModel"/>
+      <log/>
+    </runtimeEnvironmentXML>
+    <primaryElement primary_class="com.emc.xcelerators.community.bpm.predicateutils.impl.PredicateUtilsImpl">
+      <a_interfaces>com.emc.xcelerators.community.bpm.predicateutils.PredicateUtils</a_interfaces>
+      <a_interfaces>com.documentum.fc.client.IDfModule</a_interfaces>
+    </primaryElement>
+    <miscellaneous objectName="Miscellaneous">
+      <objectType href="urn:com.emc.ide.artifact.dclass/dm_folder?name=dm_folder#//@dataModel"/>
+    </miscellaneous>
+  </dataModel>
+  <viewModel xsi:type="Artifact:DefaultArtifactViewModel"/>
+</Artifact:Artifact>
