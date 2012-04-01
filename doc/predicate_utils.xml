@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document version="1.0.0">
+  <title>PredicateUtils</title>
+  <author>Ingemar Axelsson</author>
+
+  <chapter name="Preface" notoc="true">
+    <heading>Purpose</heading>
+    <p>
+      This document provides step-by-step instructions on how to
+      install, configure, and use the PredicateUtils xCelerator.
+    </p>
+
+    <heading>Intended audience</heading>
+    <p>
+      The information in this guide is intended for xCP application
+      designers and developers who need to configure and administer
+      processes within the Process Builder software. The objective of
+      this xCelerator is to save time and effort when implementing
+      process that need to perform simple string operations as part of
+      the process flow.
+    </p>
+
+    <heading>Support information</heading> 
+    <p>
+      The PredicateUtils are not supported by EMC but has gone through
+      a formal release cycle, including quality assurance and
+      documentation.
+    </p>
+
+    <heading>Related documentation</heading>
+    <p>
+      The EMC Documentum xCelerator home page
+      (https://community.emc.com/docs/DOC-6143) provieds access to xCP
+      xCelerators.
+    </p>
+
+    <heading>Revision history</heading>
+    <p>
+      The following changes have been made to this guide.
+    </p>
+    
+  </chapter>
+  
+  <chapter name="Overview">
+    <heading>What is an xCelerator?</heading>
+
+    <heading>PredicateUtils</heading>
+    <p>
+      The PredicateUtils xCelerator provides a commonly used boolean
+      operators, such as simple and, or, not functions, it also
+      provides methods for determine if two primitive objects are
+      equal or not, as well as some commonly used comparison operators
+      as well. It also provides some simple date operators to be able to 
+      decide if a date is before, equal to, or after another date.
+    </p>
+    <p>
+      This makes it possible for a developer to easily validate and build 
+      more complex business rules.
+    </p>
+    <heading>Bill of Material</heading> 
+    <p>
+      The PredicateUtils xCelerator is accessible through the EMC
+      Documentum Community xCelerator xChange home page
+      (https://community.emc.com/docs/DOC-7597) by selecting the
+      PredicateUtils xCelerator link or by navigating directly to
+      https://community.emc.com/docs/DOC-10159.
+    </p>
+    <p>
+      The <code>predicate_utils.zip</code> file contains:
+    </p>
+  </chapter>
+ 
+  <chapter name="Installing xCelerator">
+    <heading>Prerequisites</heading>
+    <list>
+      <item>Composer 6.7 or later.</item>
+      <item>Process Builder 6.7 or later.</item>
+    </list>
+        
+    <heading>Installing the PredicateUtils DAR</heading>
+    <p>
+      Install the  PredicateUtils DAR using the DAR Installer packaged
+      with Documentum Composer, which is the preferred installation
+      method. You can also use the Documentum Composer non-UI command
+      line version, known as headless Composer, to install the DAR
+      file. Detailed instructions for installing DARs and using the
+      DAR Installer or the headless Composer are available in the
+      Documentum Composer User Guide. You must be a superuser or EMC
+      Documentum dministrator to install a DAR using the DAR Installer
+      or Documentum headless Composer.
+    </p>
+    <p>To install the  PredicateUtils DAR:</p>
+    <numlist>
+      <item>Download the <code>predicate_utils.zip</code> file which is
+      accessible through the EMC Documentum xCelerator community home
+      page (<code>https://community.emc.com/docs/DOC-7597</code>) by selecting the
+      PredicateUtils xCelerator link or by navigating directly to
+      <code>https://community.emc.com/docs/DOC-10159</code>.</item> 
+      <item>Unzip the <code>predicate_utils.zip</code> file and locate
+      the PredicateUtils.dar file.</item>
+      <item>Install the PredicateUtils DAR file using the DAR
+      Installer (or headless Composer) according to the instructions
+      provided in the Documentum Composer User Guide.</item>
+    </numlist>
+  </chapter>
+
+  <chapter name="Using PredicateUtils xCelerator">
+    <heading>How to use the PredicateUtils xCelerator</heading>
+    
+    <heading>Overview of the Methods PredicateUtils provides</heading>
+    <p>Binary methods below are accepting arrays of different types. Each
+    operator is comparing the value of the elements in the array with
+    the same array index. That is, rhs[0] == lhs[0], rhs[1] == lhs[1]
+    and so on.</p>
+    <p>The consequences of this is that both input arrays must be of
+    equal length.</p>
+    <p>Unary methods accepts just one array, and it will operate on
+    each element if its return type is an array. If the return type is
+    a single Boolean, then the method will operate on all values in
+    the input array.</p>
+
+    <subheading>Boolean methods</subheading>
+
+    <function>
+      <signature>Boolean[] <name>not</name>(final Boolean[] values)</signature>
+      <description>
+	Inverts the boolean values given by the input array, and
+	produces an output array of the same lenght, with the
+	result.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>and</name>(final Boolean[] rhs, final Boolean[] lhs)
+      </signature>
+      <description>
+	Returns true if and only if both of the two input booleans
+	are true. Otherwise false.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean <name>and</name>(final Boolean[] values)
+      </signature>
+      <description>
+	Returns true if and only if all values in the input arrays are
+	true. Otherwise false.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>or</name>(final Boolean[] rhs, final Boolean[] lhs)
+      </signature>
+      <description>
+	Returns true if one or both of the input booleans are true. Otherwise false.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>lessThan</name>(final Double[] rhs, final Double[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Double.compareTo()</code>
+	method. See Java reference Java SE 6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>lessThanEqual</name>(final Double[] rhs, final Double[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Double.compareTo()</code>
+	method. See Java reference Java SE 6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>greaterThan</name>(final Double[] rhs, final Double[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Double.compareTo()</code>
+	method. See Java reference Java SE 6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>greaterThanEqual</name>(final Double[] rhs, final Double[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Double.compareTo()</code>
+	method. See Java reference Java SE 6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>equals</name>(final Double[] rhs, final Double[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Double.compareTo()</code>
+	method. See Java reference Java SE 6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>equals</name>(final String[] rhs, final String[] lhs)
+      </signature>
+      <description>
+	Applies the <code>String.compareTo()</code>
+	method. See Java reference Java SE 6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>equalsIgnoreCase</name>(final String[] rhs, final String[] lhs)
+      </signature>
+      <description>
+	Applies the <code>String.compareIgnoreCase()</code>
+	method. See Java reference Java SE 6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>equals</name>(final Date[] rhs, final Date[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Date.equals()</code> method. See Java reference Java SE
+	6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>before</name>(final Date[] rhs, final Date[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Date.before()</code> method. See Java reference Java SE
+	6 for more information.
+      </description>
+    </function>
+    <function>
+      <signature>
+	Boolean[] <name>after</name>(final Date[] rhs, final Date[] lhs)
+      </signature>
+      <description>
+	Applies the <code>Date.after()</code> method. See Java reference Java SE
+	6 for more information.
+      </description>
+    </function>
+  </chapter>
+
+</document>
