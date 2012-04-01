@@ -4,15 +4,21 @@ import java.util.Date;
 
 import com.emc.xcelerators.community.bpm.predicateutils.impl.BinaryFunction;
 
+/**
+ *
+ * @author Ingemar Axelsson <ingemar.axelsson@emc.com>
+ *
+ */
 public class DateBeforeFunction implements BinaryFunction<Date> {
 
+	/**
+	 * @return true iff rhs is before lhs
+	 */
 	@Override
 	public boolean apply(final Date rhs, final Date lhs) {
 		if (rhs == null) {
 			throw new NullPointerException();
-		} else {
-			return rhs.before(lhs);
 		}
+		return rhs.before(lhs);
 	}
-
 }
