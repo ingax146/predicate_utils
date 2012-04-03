@@ -112,7 +112,24 @@
 		</jar>
 	</target>
 
-	<target name="doc" depends="init,compile">
+	<target name="manual" depends="init">
+		<property name="fopExecutable" location="C:/00_Axelsi/10_programs/fop-1.0/fop.bat"/>
+		<property name="instructions.transform" location="../xsl/xcelerator.xsl"/>
+		<property name="instructions.source" location="../doc/${project.name}.xml"/>
+		<property name="instructions.output" value="${project.name}.pdf"/>
+		<exec executable="cmd">
+			<arg value="/c"/>
+			<arg value="${fopExecutable}"/>
+			<arg value="-xml"/>
+			<arg value="${instructions.source}"/>
+			<arg value="-xsl"/>
+			<arg value="${instructions.transform}"/>
+			<arg value="-pdf"/>
+			<arg value="${deploy.home}/${instructions.output}"/>
+		</exec>
+	</target>
+
+	<target name="doc" depends="init,compile,manual">
 		<property name="javadoc.home" value="${build.home}/javadoc"/>
 		<javadoc executable="C:/Program Files/Java/jdk1.6.0_29/bin/javadoc.exe"
 			sourcepath="${src.home}" destdir="${javadoc.home}/api"/>
