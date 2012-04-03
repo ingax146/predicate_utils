@@ -4,13 +4,13 @@
   <author>Ingemar Axelsson</author>
 
   <chapter name="Preface" notoc="true">
-    <heading>Purpose</heading>
+    <h1>Purpose</h1>
     <p>
       This document provides step-by-step instructions on how to
       install, configure, and use the PredicateUtils xCelerator.
     </p>
 
-    <heading>Intended audience</heading>
+    <h1>Intended audience</h1>
     <p>
       The information in this guide is intended for xCP application
       designers and developers who need to configure and administer
@@ -20,21 +20,21 @@
       the process flow.
     </p>
 
-    <heading>Support information</heading> 
+    <h1>Support information</h1>
     <p>
       The PredicateUtils are not supported by EMC but has gone through
       a formal release cycle, including quality assurance and
       documentation.
     </p>
 
-    <heading>Related documentation</heading>
+    <h1>Related documentation</h1>
     <p>
       The EMC Documentum xCelerator home page
       (https://community.emc.com/docs/DOC-6143) provieds access to xCP
       xCelerators.
     </p>
 
-    <heading>Revision history</heading>
+    <h1>Revision history</h1>
     <p>
       The following changes have been made to this guide.
     </p>
@@ -42,9 +42,9 @@
   </chapter>
   
   <chapter name="Overview">
-    <heading>What is an xCelerator?</heading>
+    <h1>What is an xCelerator?</h1>
 
-    <heading>PredicateUtils</heading>
+    <h1>PredicateUtils</h1>
     <p>
       The PredicateUtils xCelerator provides a commonly used boolean
       operators, such as simple and, or, not functions, it also
@@ -57,7 +57,15 @@
       This makes it possible for a developer to easily validate and build 
       more complex business rules.
     </p>
-    <heading>Bill of Material</heading> 
+    <p>PredicateUtils is intended to make it easier to use more complex
+    expressions for a decision split activity because the 'Manual Edit'
+    tab does not work as expected or is in the best case very error prone.
+    </p>
+    <p>Using the PredicateUtils will make the decision evaluation less
+    error prone, and it will also enhance the possibilities of what you
+    can decide upon.</p>
+
+    <h1>Bill of Material</h1>
     <p>
       The PredicateUtils xCelerator is accessible through the EMC
       Documentum Community xCelerator xChange home page
@@ -71,13 +79,13 @@
   </chapter>
  
   <chapter name="Installing xCelerator">
-    <heading>Prerequisites</heading>
+    <h1>Prerequisites</h1>
     <list>
       <item>Composer 6.7 or later.</item>
       <item>Process Builder 6.7 or later.</item>
     </list>
         
-    <heading>Installing the PredicateUtils DAR</heading>
+    <h1>Installing the PredicateUtils DAR</h1>
     <p>
       Install the  PredicateUtils DAR using the DAR Installer packaged
       with Documentum Composer, which is the preferred installation
@@ -105,13 +113,13 @@
   </chapter>
 
   <chapter name="Using PredicateUtils xCelerator">
-    <heading>How to use the PredicateUtils xCelerator</heading>
+    <h1>How to use the PredicateUtils xCelerator</h1>
     
-    <heading>Overview of the Methods PredicateUtils provides</heading>
+    <h1>Overview of the Methods PredicateUtils provides</h1>
     <p>Binary methods below are accepting arrays of different types. Each
     operator is comparing the value of the elements in the array with
-    the same array index. That is, rhs[0] == lhs[0], rhs[1] == lhs[1]
-    and so on.</p>
+    the same array index. That is, <code>rhs[0] == lhs[0]</code>,
+    <code>rhs[1] == lhs[1]</code> and so on.</p>
     <p>The consequences of this is that both input arrays must be of
     equal length.</p>
     <p>Unary methods accepts just one array, and it will operate on
@@ -119,7 +127,7 @@
     a single Boolean, then the method will operate on all values in
     the input array.</p>
 
-    <subheading>Boolean methods</subheading>
+    <h2>Boolean methods</h2>
 
     <function>
       <signature>Boolean[] <name>not</name>(final Boolean[] values)</signature>
