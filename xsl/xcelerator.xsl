@@ -17,6 +17,29 @@
 		<xsl:attribute name="font-size">10pt</xsl:attribute>
 	</xsl:attribute-set>
 
+	<xsl:attribute-set name="chapter-style">
+		<xsl:attribute name="font-family">Optima</xsl:attribute>
+		<xsl:attribute name="font-size">22pt</xsl:attribute>
+		<xsl:attribute name="space-after">1em</xsl:attribute>
+	</xsl:attribute-set>
+
+	<xsl:attribute-set name="h1-style">
+		<xsl:attribute name="font-family">Optima</xsl:attribute>
+		<xsl:attribute name="font-size">18pt</xsl:attribute>
+		<xsl:attribute name="space-before">1.5em</xsl:attribute>
+		<xsl:attribute name="space-after">0.5em</xsl:attribute>
+	</xsl:attribute-set>
+
+	<xsl:attribute-set name="h2-style">
+		<xsl:attribute name="font-family">Optima</xsl:attribute>
+		<xsl:attribute name="font-size">16pt</xsl:attribute>
+		<xsl:attribute name="space-before">1em</xsl:attribute>
+	</xsl:attribute-set>
+
+	<xsl:attribute-set name="default-text-family">
+		<xsl:attribute name="font-family">Palatino</xsl:attribute>
+	</xsl:attribute-set>
+
 	<xsl:template match="/document">
 		<fo:root>
 			<fo:layout-master-set>
@@ -26,8 +49,8 @@
 					margin="30mm"
 					margin-top="50mm"
 					margin-right="30mm">
-					<fo:region-body font-family="Helvetica"/>
-					<fo:region-after extent="25mm" font-family="Helvetica"/>
+					<fo:region-body xsl:use-attribute-sets="default-text-family"/>
+					<fo:region-after extent="25mm" xsl:use-attribute-sets="default-text-family"/>
 				</fo:simple-page-master>
 
 				<fo:simple-page-master master-name="license-page"
@@ -36,8 +59,8 @@
 					margin="30mm"
 					margin-top="50mm"
 					margin-right="30mm">
-					<fo:region-body font-family="Helvetica" font-size="10pt"/>
-					<fo:region-after extent="20mm" font-family="Helvetica"/>
+					<fo:region-body xsl:use-attribute-sets="default-text-family" font-size="10pt"/>
+					<fo:region-after extent="20mm" xsl:use-attribute-sets="default-text-family"/>
 				</fo:simple-page-master>
 
 				<fo:simple-page-master master-name="content-page"
@@ -47,7 +70,7 @@
 					margin-bottom="10mm"
 					margin-left="30mm"
 					margin-right="30mm">
-					<fo:region-body font-family="Helvetica" font-size="10pt" margin-bottom="30mm"/>
+					<fo:region-body xsl:use-attribute-sets="default-text-family" font-size="10pt" margin-bottom="30mm"/>
 					<fo:region-after region-name="PageFooter" extent="15mm"/>
 				</fo:simple-page-master>
 			</fo:layout-master-set>
@@ -154,7 +177,7 @@
 
 		<fo:block space-before="2mm" font-size="12pt" text-align-last="justify">
 			<fo:basic-link internal-destination="{generate-id(.)}">
-				<xsl:value-of select="$chapter-number"/>  <xsl:value-of select="@name"/>
+				<xsl:value-of select="$chapter-number"/><xsl:text> </xsl:text><xsl:value-of select="@name"/>
 				<fo:leader leader-pattern="dots"/>
 				<fo:page-number-citation ref-id="{generate-id(.)}"/>
 			</fo:basic-link>
@@ -167,6 +190,7 @@
 				<xsl:number level="multiple" count="chapter|h1" format="1.1.1"/>
 			</xsl:variable>
 			<xsl:value-of select="$chapter-number"/>
+			<xsl:text> </xsl:text>
 			<xsl:value-of select="."/>
 			<fo:leader leader-pattern="dots"/>
 			<fo:page-number-citation ref-id="{generate-id(.)}"/>
@@ -174,21 +198,18 @@
 	</xsl:template>
 
 	<xsl:template match="h1">
-		<fo:block font-size="18pt" id="{generate-id(.)}" space-before="10mm" space-after="4mm">
+		<fo:block id="{generate-id(.)}" xsl:use-attribute-sets="h1-style">
 			<xsl:variable name="chapter-number">
 				<xsl:number level="multiple" count="chapter|h1" format="1.1.1"/>
 			</xsl:variable>
 			<xsl:value-of select="$chapter-number"/>
+			<xsl:text> </xsl:text>
 			<xsl:value-of select="."/>
 		</fo:block>
 	</xsl:template>
 
 	<xsl:template match="h2">
-		<fo:block font-size="14pt"
-			id="{generate-id(.)}"
-			space-before="2mm"
-			space-after="1mm"
-			keep-with-next="always">
+		<fo:block id="{generate-id(.)}"	keep-with-next="always" xsl:use-attribute-sets="h2-style">
 			<xsl:value-of select="."/>
 		</fo:block>
 	</xsl:template>
@@ -217,11 +238,10 @@
 			</fo:static-content>
 
 			<fo:flow flow-name="xsl-region-body">
-				<fo:block font-size="18pt" id="{generate-id(.)}" space-after="4mm">
-					<fo:inline margin-right="4mm">
+				<fo:block id="{generate-id(.)}" xsl:use-attribute-sets="chapter-style">
+					<fo:inline>
 						<xsl:value-of select="$chapter-number"/>
-					</fo:inline>
-					<fo:inline margin-left="4mm">
+						<xsl:text> </xsl:text>
 						<xsl:value-of select="@name"/>
 					</fo:inline>
 				</fo:block>
