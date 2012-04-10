@@ -29,6 +29,7 @@ public class DoubleComparatorTests {
 		assertEquals(false, cmp.apply(new Double(1.0), new Double(0.0)));
 		assertEquals(true, cmp.apply(new Double(-1.0), new Double(0.0)));
 		assertEquals(true, cmp.apply(new Double(-0.0), new Double(1.0)));
+		assertEquals(false, cmp.apply(new Double(1.0), new Double(1.0)));
 	}
 
 	/**
@@ -43,6 +44,7 @@ public class DoubleComparatorTests {
 		assertEquals(true, cmp.apply(new Double(-1.0), new Double(0.0)));
 		assertEquals(true, cmp.apply(new Double(-0.0), new Double(1.0)));
 		assertEquals(true, cmp.apply(new Double(0.0), new Double(0.0)));
+		assertEquals(true, cmp.apply(new Double(1.0), new Double(1.0)));
 	}
 
 	/**
@@ -56,6 +58,7 @@ public class DoubleComparatorTests {
 		assertEquals(true, cmp.apply(new Double(1.0), new Double(0.0)));
 		assertEquals(false, cmp.apply(new Double(-1.0), new Double(0.0)));
 		assertEquals(false, cmp.apply(new Double(-0.0), new Double(1.0)));
+		assertEquals(false, cmp.apply(new Double(1.0), new Double(1.0)));
 	}
 
 	/**
@@ -70,5 +73,6 @@ public class DoubleComparatorTests {
 		assertEquals(false, cmp.apply(new Double(-1.0), new Double(0.0)));
 		assertEquals(false, cmp.apply(new Double(-0.0), new Double(1.0)));
 		assertEquals(true, cmp.apply(new Double(0.0), new Double(0.0)));
+		assertEquals(true, cmp.apply(new Double(1.0), new Double(1.0)));
 	}
 }
