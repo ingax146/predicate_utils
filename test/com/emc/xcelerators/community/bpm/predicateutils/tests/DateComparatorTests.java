@@ -12,8 +12,16 @@ import com.emc.xcelerators.community.bpm.predicateutils.impl.functions.DateAfter
 import com.emc.xcelerators.community.bpm.predicateutils.impl.functions.DateBeforeFunction;
 
 
+/**
+ * @author Ingemar Axelsson <ingemar.axelsson@emc.com>
+ *
+ */
 public class DateComparatorTests {
 
+	/**
+	 *
+	 */
+	@SuppressWarnings("boxing")
 	@Test
 	public void test0() {
 		Date before = new Date(3600*1000*24);
@@ -25,6 +33,10 @@ public class DateComparatorTests {
 		assertEquals(false, cmp.apply(before, before));
 	}
 	
+	/**
+	 *
+	 */
+	@SuppressWarnings("boxing")
 	@Test
 	public void test1() {
 		Date before = new Date(3600*1000*24);
