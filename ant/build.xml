@@ -59,6 +59,8 @@
 	<property name="interface.filename" value="${project.name}.jar"/>
 	<property name="implementation.filename" value="${project.name}Impl.jar"/>
 	<property name="javadoc.filename" value="${project.name}_javadoc.zip"/>
+	<property name="src.filename" value="${project.name}_src.zip"/>
+
 	<!--
 		Either point these properties to the content path for each jar file, or
 		change the jardef artifacts to point to a specific JAR folder. The later
@@ -101,6 +103,20 @@
 		</copy>
 	</target>
 
+	<target name="zip.src" depends="init">
+		<zip destfile="${deploy.home}/${src.filename}">
+			<fileset dir="${src.home}" includes="**"/>
+		</zip>
+	</target>
+
+	<target name="zip.doc" depends="init,doc">
+		<zip destfile="${deploy.home}/${javadoc.filename}">
+			<fileset dir="${javadoc.home}" includes="**"/>
+		</zip>
+	</target>
+
+	<target name="zip" depends="zip.src,zip.doc"/>
+
 	<target name="jar" depends="init,compile">
 		<jar jarfile="${deploy.home}/${implementation.filename}">
 			<fileset dir="${build.home}"
@@ -133,13 +149,9 @@
 		<property name="javadoc.home" value="${build.home}/javadoc"/>
 		<javadoc executable="C:/Program Files/Java/jdk1.6.0_29/bin/javadoc.exe"
 			sourcepath="${src.home}" destdir="${javadoc.home}/api"/>
-
-		<zip destfile="${deploy.home}/${javadoc.filename}">
-			<fileset dir="${javadoc.home}" includes="**"/>
-		</zip>
 	</target>
 
-	<target name="pre.dar" depends="jar,doc">
+	<target name="pre.dar" depends="jar,zip">
 		<copy todir="${interface.content.dir}">
 			<fileset dir="${deploy.home}" includes="${interface.filename}"/>
 		</copy>
@@ -154,6 +166,7 @@
 
 	<target name="dar" depends="jar,pre.dar">
 		<emc.build dmproject="${project.name}"/>
+<!--		<emc.dar dmproject="${project.name" manifest="" dar="../bin-dar/{project.name}.dar"/> -->
 		<copy todir="${deploy.home}">
 			<fileset dir="../bin-dar" includes="**"/>
 		</copy>
