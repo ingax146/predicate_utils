@@ -11,71 +11,62 @@
     </p>
 
     <h1>Intended audience</h1>
-    <p>
-      The information in this guide is intended for xCP application
+    <p>The information in this guide is intended for xCP application
       designers and developers who need to configure and administer
       processes within the Process Builder software. The objective of
       this xCelerator is to save time and effort when implementing
       process that need to perform simple string operations as part of
-      the process flow.
-    </p>
+      the process flow.</p>
 
     <h1>Support information</h1>
-    <p>
-      The PredicateUtils are not supported by EMC but has gone through
+    <p>The PredicateUtils are not supported by EMC but has gone through
       a formal release cycle, including quality assurance and
-      documentation.
-    </p>
+      documentation.</p>
 
     <h1>Related documentation</h1>
-    <p>
-      The EMC Documentum xCelerator home page
-      (https://community.emc.com/docs/DOC-6143) provieds access to xCP
-      xCelerators.
-    </p>
+    <p>The EMC Documentum xCelerator home page
+      (<code>https://community.emc.com/docs/DOC-6143</code>) provieds access to xCP
+      xCelerators.</p>
 
     <h1>Revision history</h1>
-    <p>
-      The following changes have been made to this guide.
-    </p>
-    
+    <p>The following changes have been made to this guide.</p>
   </chapter>
-  
+
   <chapter name="Overview">
     <h1>What is an xCelerator?</h1>
 
     <h1>PredicateUtils</h1>
-    <p>
-      The PredicateUtils xCelerator provides a commonly used boolean
+    <p>The PredicateUtils xCelerator provides a commonly used boolean
       operators, such as simple and, or, not functions, it also
       provides methods for determine if two primitive objects are
       equal or not, as well as some commonly used comparison operators
-      as well. It also provides some simple date operators to be able to 
-      decide if a date is before, equal to, or after another date.
-    </p>
-    <p>
-      This makes it possible for a developer to easily validate and build 
-      more complex business rules.
-    </p>
+      as well. It also provides some simple date operators to be able to
+      decide if a date is before, equal to, or after another date.</p>
+    <p>This makes it possible for a developer to easily validate and build
+      more complex business rules.</p>
     <p>PredicateUtils is intended to make it easier to use more complex
     expressions for a decision split activity because the 'Manual Edit'
-    tab does not work as expected or is in the best case very error prone.
-    </p>
+    tab does not work as expected or is in the best case very error prone.</p>
     <p>Using the PredicateUtils will make the decision evaluation less
     error prone, and it will also enhance the possibilities of what you
     can decide upon.</p>
 
     <h1>Bill of Material</h1>
-    <p>
-      The PredicateUtils xCelerator is accessible through the EMC
+    <p>The PredicateUtils xCelerator is accessible through the EMC
       Documentum Community xCelerator xChange home page
-      (https://community.emc.com/docs/DOC-7597) by selecting the
+      (<code>https://community.emc.com/docs/DOC-7597</code>) by selecting the
       PredicateUtils xCelerator link or by navigating directly to
-      https://community.emc.com/docs/DOC-10159.
-    </p>
-    <p>
-      The <code>predicate_utils.zip</code> file contains:
-    </p>
+      <code>https://community.emc.com/docs/DOC-10159</code>.</p>
+    <p>The <code>predicate_utils.zip</code> file contains:</p>
+    <list>
+		<item>predicate_utils.pdf - This document</item>
+		<item>predicate_utils.dar - DAR file with module.</item>
+		<item>predicate_utils_javadoc.zip - API Documentation</item>
+		<item>predicate_utils.installparam - Installation parameters</item>
+		<item>predicate_utils.jar - Interface jar file</item>
+		<item>predicate_utilsImpl.jar - Implementation jar file</item>
+		<item>predicate_utils_src.zip - Source code</item>
+    </list>
   </chapter>
  
   <chapter name="Installing xCelerator">
@@ -83,8 +74,12 @@
     <list>
       <item>Composer 6.7 or later.</item>
       <item>Process Builder 6.7 or later.</item>
+      <item>predicate_utils.dar</item>
+      <item>predicate_utils.installparam</item>
     </list>
-        
+    <p>Notice that all objects in the zip file are not needed to
+    install the PredicateUtils xCelerator.</p>
+
     <h1>Installing the PredicateUtils DAR</h1>
     <p>
       Install the  PredicateUtils DAR using the DAR Installer packaged
@@ -103,7 +98,7 @@
       accessible through the EMC Documentum xCelerator community home
       page (<code>https://community.emc.com/docs/DOC-7597</code>) by selecting the
       PredicateUtils xCelerator link or by navigating directly to
-      <code>https://community.emc.com/docs/DOC-10159</code>.</item> 
+      <code>https://community.emc.com/docs/DOC-10159</code>.</item>
       <item>Unzip the <code>predicate_utils.zip</code> file and locate
       the PredicateUtils.dar file.</item>
       <item>Install the PredicateUtils DAR file using the DAR
@@ -113,19 +108,24 @@
   </chapter>
 
   <chapter name="Using PredicateUtils xCelerator">
+
     <h1>How to use the PredicateUtils xCelerator</h1>
-    
+	<p>The PredicateUtils xCelerator is created to be used as a process activity.
+	Using the built in BOF module activity. The xCelerator is intentionally not
+	thread safe, this so it performs faster as a BOF activity module. It should 
+	be safe to use it in this environment.</p>
+
     <h1>Overview of the Methods PredicateUtils provides</h1>
     <p>Binary methods below are accepting arrays of different types. Each
-    operator is comparing the value of the elements in the array with
-    the same array index. That is, <code>rhs[0] == lhs[0]</code>,
-    <code>rhs[1] == lhs[1]</code> and so on.</p>
+    operator is implementing element by element comparison. That is,
+    <code>rhs[0] == lhs[0]</code>, <code>rhs[1] == lhs[1]</code> and so
+    on.</p>
+
     <p>The consequences of this is that both input arrays must be of
     equal length.</p>
+
     <p>Unary methods accepts just one array, and it will operate on
-    each element if its return type is an array. If the return type is
-    a single Boolean, then the method will operate on all values in
-    the input array.</p>
+    each element if its return type is an array.</p>
 
     <h2>Boolean methods</h2>
 
@@ -133,7 +133,7 @@
       <signature>Boolean[] <name>not</name>(final Boolean[] values)</signature>
       <description>
 	Inverts the boolean values given by the input array, and
-	produces an output array of the same lenght, with the
+	produces an output array of the same length, with the
 	result.
       </description>
     </function>
@@ -144,15 +144,6 @@
       <description>
 	Returns true if and only if both of the two input booleans
 	are true. Otherwise false.
-      </description>
-    </function>
-    <function>
-      <signature>
-	Boolean <name>and</name>(final Boolean[] values)
-      </signature>
-      <description>
-	Returns true if and only if all values in the input arrays are
-	true. Otherwise false.
       </description>
     </function>
     <function>
@@ -254,5 +245,4 @@
       </description>
     </function>
   </chapter>
-
 </document>
