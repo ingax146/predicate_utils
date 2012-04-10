@@ -16,7 +16,7 @@ public class GreaterThanEqualConverter implements BooleanConverter {
 	 */
 	@Override
 	public boolean convert(int result) {
-		return result > 0;
+		return result >= 0;
 	}
 
 }
