@@ -10,9 +10,17 @@ import com.emc.xcelerators.community.bpm.predicateutils.impl.functions.BooleanAn
 import com.emc.xcelerators.community.bpm.predicateutils.impl.functions.BooleanNotFunction;
 import com.emc.xcelerators.community.bpm.predicateutils.impl.functions.BooleanOrFunction;
 
-
+/**
+ *
+ * @author Ingemar Axelsson <ingemar.axelsson@emc.com>
+ *
+ */
 public class BooleanComparatorTests {
 	
+	/**
+	 *
+	 */
+	@SuppressWarnings("boxing")
 	@Test
 	public void test0() {
 		BinaryFunction<Boolean> cmp = new BooleanOrFunction();
@@ -22,6 +30,10 @@ public class BooleanComparatorTests {
 		assertEquals(false, cmp.apply(Boolean.FALSE, Boolean.FALSE));
 	}
 	
+	/**
+	 *
+	 */
+	@SuppressWarnings("boxing")
 	@Test
 	public void test1() {
 		BinaryFunction<Boolean> cmp = new BooleanAndFunction();
@@ -31,6 +43,10 @@ public class BooleanComparatorTests {
 		assertEquals(false, cmp.apply(Boolean.FALSE, Boolean.FALSE));
 	}
 	
+	/**
+	 *
+	 */
+	@SuppressWarnings("boxing")
 	@Test
 	public void test2() {
 		UnaryFunction<Boolean> cmp = new BooleanNotFunction();

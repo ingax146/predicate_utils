@@ -18,33 +18,24 @@
       process that need to perform simple string operations as part of
       the process flow.</p>
 
-    <h1>Support information</h1>
-    <p>The PredicateUtils are not supported by EMC but has gone through
-      a formal release cycle, including quality assurance and
-      documentation.</p>
-
     <h1>Related documentation</h1>
     <p>The EMC Documentum xCelerator home page
       (<code>https://community.emc.com/docs/DOC-6143</code>) provieds access to xCP
       xCelerators.</p>
 
     <h1>Revision history</h1>
-    <p>The following changes have been made to this guide.</p>
   </chapter>
 
   <chapter name="Overview">
     <h1>PredicateUtils</h1>
-    <p>The PredicateUtils xCelerator provides a commonly used boolean
-      operators, such as simple and, or, not functions, it also
-      provides methods for determine if two primitive objects are
-      equal or not, as well as some commonly used comparison operators
-      as well. It also provides some simple date operators to be able to
+    <p>The PredicateUtils xCelerator provides commonly used boolean
+      operators, such as 'and', 'or', 'not' functions, it also
+      provides methods to determine if two primitive objects are
+      equal or not, as well as some commonly used comparison operators.
+      It also provides some simple date operators to be able to
       decide if a date is before, equal to, or after another date.</p>
     <p>This makes it possible for a developer to easily validate and build
       more complex business rules.</p>
-    <p>PredicateUtils is intended to make it easier to use more complex
-    expressions for a decision split activity because the 'Manual Edit'
-    tab does not work as expected or is in the best case very error prone.</p>
     <p>Using the PredicateUtils will make the decision evaluation less
     error prone, and it will also enhance the possibilities of what you
     can decide upon.</p>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <Artifact:Artifact xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Artifact="http://documentum.emc.com/infrastructure/12012007/artifact" xmlns:moduledef="http://documentum.emc.com/artifact/12012007/moduledef" urn="urn:com.emc.ide.artifact.moduledef/predicate_utils?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/Modules/predicate_utils.module" categoryId="com.emc.ide.artifact.moduledef">
-  <dataModel xsi:type="moduledef:ModuleDef" objectName="com.emc.xcelerators.community.bpm.predicate_utils" contact_info="Ingemar Axelsson" a_module_type="[Standard Module]">
+  <dataModel xsi:type="moduledef:ModuleDef" objectName="com.emc.xcelerators.community.bpm.predicateutils.PredicateUtils" contact_info="Ingemar Axelsson" a_module_type="[Standard Module]">
     <objectType href="urn:com.emc.ide.artifact.dclass/dmc_module?name=dmc_module#//@dataModel"/>
     <interfaceJars href="urn:com.emc.ide.artifact.jardef.jardef/predicateutils?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/JAR%20Definitions/predicateutils.jardef#//@dataModel"/>
     <implementationJars href="urn:com.emc.ide.artifact.jardef.jardef/predicateutilsImpl?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/JAR%20Definitions/predicateutilsimpl.jardef#//@dataModel"/>

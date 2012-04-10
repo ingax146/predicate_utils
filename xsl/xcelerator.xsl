@@ -81,6 +81,7 @@
 					The cover page contains some hard coded data in the
 					template. All these data is stored here.
 				-->
+				<!--
 				<fo:static-content flow-name="xsl-region-after">
 					<fo:block font-size="10pt" text-align="end">
 						EMC Corporation
@@ -98,7 +99,7 @@
 						www.EMC.com
 					</fo:block>
 				</fo:static-content>
-
+-->
 				<fo:flow flow-name="xsl-region-body">
 				 	<fo:block margin-bottom="5cm">
 						<fo:block font-size="28pt" font-weight="bold" text-align="end">
@@ -113,12 +114,15 @@
 					</fo:block>
 					<fo:block font-size="28pt" text-align="end">
 						<xsl:value-of select="title"/>
+						<xsl:text> </xsl:text>
+						xCelerator
 					</fo:block>
 					<fo:block font-size="18pt" text-align="end">
 						Version <xsl:value-of select="@version"/>
 					</fo:block>
 				</fo:flow>
 			</fo:page-sequence>
+
 
 			<fo:page-sequence master-reference="license-page">
 				<fo:flow flow-name="xsl-region-body">
@@ -148,7 +152,7 @@
 				</fo:flow>
 			</fo:page-sequence>
 
-			<!-- Table of content pages is genereated here. -->
+			<!-- Table of content pages is generated here. -->
 			<fo:page-sequence master-reference="content-page">
 				<fo:flow flow-name="xsl-region-body">
 					<fo:block font-size="24pt" space-after="5mm">

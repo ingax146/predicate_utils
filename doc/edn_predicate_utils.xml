@@ -1,0 +1,104 @@
+<page type="xcelerator">
+
+  <section name="Description">
+    <p>
+	The PredicateUtils xCelerator provides commonly used Boolean,
+	Double, String, and Date operators.
+	</p>
+	<p>
+	This makes it possible for a developer to easily validate and build
+    slightly more complex business rules.
+    </p>
+    <p>
+    Using the PredicateUtils will make the decision evaluation less
+    error prone, and it will also enhance the possibilities of what you
+    can decide upon.
+    </p>
+<!--
+	<fullpict
+	src="https://community.emc.com/servlet/JiveServlet/downloadImage/23575/dqlutils_before.png"
+	width="298" height="125" alt="Without DQLUtils" />
+	<fullpict
+	src="https://community.emc.com/servlet/JiveServlet/downloadImage/23576/dqlutils_after.png"
+	width="174" height="139" alt="With DQLUtils" />
+-->
+  </section>
+
+  <section name="Highlights">
+    <items>
+      <item>Use primitive comparison operators to choose routes in processes.</item>
+      <item>Simple Boolean AND, OR, NOT expression</item>
+      <item>String equal, and equalIgnoreCase comparisons</item>
+      <item>Double less than, less than equal, greater than, and greater than equal comparisons</item>
+      <item>Date before, after, and equal comparisons</item>
+    </items>
+  </section>
+
+  <section name="User">
+    The target users are:
+    <items>
+      <item>xCP Designers</item>
+      <item>xCP Developers</item>
+    </items>
+  </section>
+
+
+  <section name="Release Notes">
+    <items>
+      <item>1.0 (2012-04-10) - Initial Release.</item>
+    </items>
+  </section>
+
+  <section name="Feature requests and source code">
+	<p>Source code for Predicate Utils xCelerator can be found at
+	<a href="https://github.com/ingax146/predicate_utils">GitHub.com</a>.
+	</p>
+  </section>
+
+<!--
+  <screenshots-3>
+    <screenshot
+	url="https://community.emc.com/servlet/JiveServlet/downloadImage/23577/dql_utils_bofmodue.png"
+	width="200" height="195" name="BOF Module" />
+    <screenshot
+	url="https://community.emc.com/servlet/JiveServlet/downloadImage/23578/dqlutils_inputmapping2.png"
+	width="200" height="196" name="Input Mapping" />
+    <screenshot
+	url="https://community.emc.com/servlet/JiveServlet/downloadImage/23579/dqlutils_outputmapping.png"
+	width="200" height="196" name="Output Mapping" />
+  </screenshots-3>
+-->
+
+  <downloads>
+
+    <downloaditem>
+      <url><![CDATA[https://community.emc.com/servlet/JiveServlet/download/16111-1-37178/predicate_utils.pdf]]></url>
+      <name>Overview Guide</name>
+      <description>
+		<items>
+	  		<item>Predicate Utils xCelerator Installation and Configuration
+	  		Guide
+	  		</item>
+		</items>
+      </description>
+    </downloaditem>
+
+    <downloaditem>
+      <url><![CDATA[https://community.emc.com/servlet/JiveServlet/download/16111-1-37179/predicate_utils_all.zip]]></url>
+      <name>Complete Install</name>
+      <description>
+		<items>
+		  <item>Predicate Utils xCelerator Installation and Configuration Guide
+		  </item>
+		  <item>Predicate Utils xCelerator dar file.</item>
+		  <item>Source Code</item>
+		  <item>Javadoc</item>
+		  <item>Interface and implementation jar files</item>
+		</items>
+      </description>
+    </downloaditem>
+
+  </downloads>
+
+  <community_footer />
+</page>
