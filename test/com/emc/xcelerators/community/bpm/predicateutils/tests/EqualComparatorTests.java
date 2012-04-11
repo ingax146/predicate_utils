@@ -101,12 +101,14 @@ public class EqualComparatorTests {
 	}
 
 	/**
+	 * @throws InterruptedException 
 	 *
 	 */
 	@SuppressWarnings("boxing")
 	@Test
-	public void test6() {
+	public void test6() throws InterruptedException {
 		Date now = new Date();
+		Thread.sleep(1);
 		Date anotherDate = Calendar.getInstance().getTime();
 		BinaryFunction<Date> cmp = new CompareFunction<Date>(new EqualConverter());
 		assertEquals(false, cmp.apply(now, anotherDate));
