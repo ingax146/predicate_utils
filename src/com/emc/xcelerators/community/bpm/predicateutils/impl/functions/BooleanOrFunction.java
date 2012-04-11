@@ -14,7 +14,6 @@ public class BooleanOrFunction implements BinaryFunction<Boolean> {
 	/**
 	 * @return true if one or both of rhs, lhs is true. False if both rhs and lhs are null.
 	 */
-	@Override
 	public boolean apply(final Boolean rhs, final Boolean lhs) {
 		if (rhs == null) {
 			if (lhs == null) {

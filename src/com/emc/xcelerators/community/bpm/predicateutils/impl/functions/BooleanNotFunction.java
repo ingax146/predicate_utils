@@ -12,7 +12,6 @@ public class BooleanNotFunction implements UnaryFunction<Boolean> {
 	/**
 	 * @return true if input is false, otherwise false.
 	 */
-	@Override
 	public boolean apply(final Boolean element) {
 		if (element == null) {
 			return false;

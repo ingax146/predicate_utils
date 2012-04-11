@@ -25,7 +25,6 @@ public class CompareFunction<T extends Comparable<T>> implements BinaryFunction<
 	 * @return true if both params are null, or the value of interpreting the
 	 * result of the comparison.
 	 */
-	@Override
 	public boolean apply(final T rhs, final T lhs) {
 		if (rhs == null) {
 			return rhs == lhs;
