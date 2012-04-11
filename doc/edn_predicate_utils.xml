@@ -72,7 +72,7 @@
   <downloads>
 
     <downloaditem>
-      <url><![CDATA[https://community.emc.com/servlet/JiveServlet/download/16111-1-37178/predicate_utils.pdf]]></url>
+      <url><![CDATA[http://community.emc.com/servlet/JiveServlet/download/16111-1-37178/predicate_utils.pdf]]></url>
       <name>Overview Guide</name>
       <description>
 		<items>
@@ -84,7 +84,7 @@
     </downloaditem>
 
     <downloaditem>
-      <url><![CDATA[https://community.emc.com/servlet/JiveServlet/download/16111-1-37179/predicate_utils_all.zip]]></url>
+      <url><![CDATA[http://community.emc.com/servlet/JiveServlet/download/16111-1-37179/predicate_utils_all.zip]]></url>
       <name>Complete Install</name>
       <description>
 		<items>
