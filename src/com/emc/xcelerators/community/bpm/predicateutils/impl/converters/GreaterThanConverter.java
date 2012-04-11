@@ -12,9 +12,9 @@ import com.emc.xcelerators.community.bpm.predicateutils.impl.BooleanConverter;
 public class GreaterThanConverter implements BooleanConverter {
 
 	/**
+	 * @param result 
 	 * @return true if the integer value > 0
 	 */
-	@Override
 	public boolean convert(int result) {
 		return result > 0;
 	}
