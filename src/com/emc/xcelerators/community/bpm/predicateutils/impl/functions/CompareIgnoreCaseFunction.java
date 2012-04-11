@@ -30,7 +30,6 @@ public class CompareIgnoreCaseFunction implements BinaryFunction<String> {
 	 * @return true if both input strings are null, or if both input strings
 	 * are equal without respect for case sensitivity.
 	 */
-	@Override
 	public boolean apply(final String rhs, final String lhs) {
 		if (rhs == null) {
 			return lhs == null;

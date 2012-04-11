@@ -14,7 +14,6 @@ public class DateBeforeFunction implements BinaryFunction<Date> {
 	/**
 	 * @return true iff rhs is before lhs
 	 */
-	@Override
 	public boolean apply(final Date rhs, final Date lhs) {
 		if (rhs == null) {
 			throw new NullPointerException();

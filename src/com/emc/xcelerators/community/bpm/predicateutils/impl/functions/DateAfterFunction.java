@@ -14,7 +14,6 @@ public class DateAfterFunction implements BinaryFunction<Date>{
 	/**
 	 * @return true iff date rhs is after lhs
 	 */
-	@Override
 	public boolean apply(final Date rhs, final Date lhs) {
 		if (rhs == null) {
 			throw new NullPointerException();
