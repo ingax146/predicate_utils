@@ -7,7 +7,6 @@
     <artifacts xsi:type="jardef:JarDef" href="urn:com.emc.ide.artifact.jardef.jardef/predicateutilsImpl?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/JAR%20Definitions/predicateutilsimpl.jardef#//@dataModel"/>
     <artifacts xsi:type="jardef:JarDef" href="urn:com.emc.ide.artifact.jardef.jardef/predicateutils?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/JAR%20Definitions/predicateutils.jardef#//@dataModel"/>
     <artifacts xsi:type="moduledef:ModuleDef" href="urn:com.emc.ide.artifact.moduledef/predicate_utils?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/Modules/predicate_utils.module#//@dataModel"/>
-    <artifacts xsi:type="installparameter:FolderParameter" href="urn:com.emc.ide.folderparameter/Dar+Install+Folder?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/Artifacts/Installation%20Parameters/darinstallfolder.parameter#//@dataModel"/>
     <artifacts xsi:type="dclass:DClass" href="urn:com.emc.ide.artifact.dclass/dmc_dar?artifactURI=platform:/resource/DFS2/inst/dclass/dmc_dar.type#//@dataModel"/>
     <artifacts xsi:type="dardef:DarDef" href="urn:com.emc.ide.artifact.dardef/default?artifactURI=file:/C:/00_AXELSI/20_src/100_composer_ws/predicate_utils/dar/default.dardef#//@dataModel"/>
     <darInstallOptionsSet>
